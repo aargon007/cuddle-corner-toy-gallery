@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from '../pages/shared/NavBar';
 import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom';
 import Footer from '../pages/shared/Footer';
-import Spinner from '../pages/shared/Spinner';
+import SpinnerGlobal from '../pages/shared/SpinnerGlobal';
 
 const Main = () => {
 
@@ -13,7 +13,7 @@ const Main = () => {
             <NavBar/>
             <div>
                 {
-                    navigation.state === 'loading' && <Spinner/>
+                    navigation.state === 'loading' && <SpinnerGlobal/>
                 }
             </div>
             <Outlet/>
