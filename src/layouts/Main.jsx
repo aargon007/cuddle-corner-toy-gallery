@@ -9,7 +9,7 @@ const Main = () => {
     const navigation = useNavigation();
 
     return (
-        <div>
+        <div className='space-y-10'>
             <NavBar/>
             <div>
                 {

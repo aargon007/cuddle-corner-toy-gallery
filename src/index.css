@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer components {
-	.activeNav {
-		@apply bg-slate-500 text-white block rounded-md px-3 py-2 text-base font-medium;
+@layer components {
+	.activeLink {
+		@apply  bg-blue-500 text-white block rounded-md px-3 py-2 text-base font-medium
 	}
 
-	.defaultNav {
-		@apply block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white;
+	.defaultLink {
+		@apply block rounded-md px-3 py-2 text-base font-medium hover:bg-blue-300
 	}
-} */
+}

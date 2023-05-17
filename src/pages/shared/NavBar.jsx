@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const NavBar = () => {
+	const { user } = useContext(AuthContext);
+
 	const menuList = [
 		{ name: "Home", to: "/", current: true },
 		{ name: "Blog", to: "/blog", current: false },
 		{ name: "All Toys", to: "/all-toys", current: false },
+	];
+
+	const userSpecificMenu = [
+		{ name: "My Toys", to: "/my-toys", current: false },
+		{ name: "Add a Toy", to: "/add-toy", current: false },
 	];
 
 	return (
@@ -41,33 +49,61 @@ const NavBar = () => {
 									</p>
 								</div>
 							</div>
-
+							{/* menu list  */}
 							<div className="flex items-center justify-center sm:items-stretch sm:justify-start">
 								<div className="hidden sm:ml-6 sm:block">
 									<div className="flex space-x-4">
+										{/* menu for all user  */}
 										{menuList.map((item) => (
 											<NavLink
 												key={item.name}
 												to={item.to}
 												className={({ isActive }) =>
-													isActive
-														? "bg-blue-500 text-white block rounded-md px-3 py-2 text-base font-medium"
-														: "block rounded-md px-3 py-2 text-base font-medium hover:bg-blue-300"
+													isActive ? "activeLink" : "defaultLink"
 												}
 											>
 												{item.name}
 											</NavLink>
 										))}
-										<NavLink
-											to="/login"
-											className={({ isActive }) =>
-												isActive
-													? "bg-blue-500 text-white block rounded-md px-3 py-2 text-base font-medium"
-													: "block rounded-md px-3 py-2 text-base font-medium hover:bg-blue-300"
-											}
-										>
-											Login
-										</NavLink>
+
+										{/* user specifc menu  */}
+										{user ? (
+											<>
+												<NavLink
+													to="/my-toys"
+													className={({ isActive }) =>
+														isActive ? "activeLink" : "defaultLink"
+													}
+												>
+													My Toys
+												</NavLink>
+												<NavLink
+													to="/add-toy"
+													className={({ isActive }) =>
+														isActive ? "activeLink" : "defaultLink"
+													}
+												>
+													Add a Toy
+												</NavLink>
+												<NavLink
+													to="/user"
+													className={({ isActive }) =>
+														isActive ? "activeLink" : "defaultLink"
+													}
+												>
+													user
+												</NavLink>
+											</>
+										) : (
+											<NavLink
+												to="/login"
+												className={({ isActive }) =>
+													isActive ? "activeLink" : "defaultLink"
+												}
+											>
+												Login
+											</NavLink>
+										)}
 									</div>
 								</div>
 							</div>
@@ -81,9 +117,7 @@ const NavBar = () => {
 									key={item.name}
 									to={item.to}
 									className={({ isActive }) =>
-										isActive
-											? "bg-blue-500 text-white block rounded-md px-3 py-2 text-base font-medium"
-											: "block rounded-md px-3 py-2 text-base font-medium hover:bg-blue-300"
+										isActive ? "activeLink" : "defaultLink"
 									}
 								>
 									{item.name}
@@ -92,9 +126,7 @@ const NavBar = () => {
 							<NavLink
 								to="/login"
 								className={({ isActive }) =>
-									isActive
-										? "bg-blue-500 text-white block rounded-md px-3 py-2 text-base font-medium"
-										: "block rounded-md px-3 py-2 text-base font-medium hover:bg-blue-300"
+									isActive ? "activeLink" : "defaultLink"
 								}
 							>
 								Login
