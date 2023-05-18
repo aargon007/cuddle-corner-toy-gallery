@@ -2,7 +2,7 @@ import React from "react";
 
 const Gallery = () => {
 	return (
-		<div className="md:px-28 px-5 flex md:flex-row flex-col gap-5">
+		<div className="flex md:flex-row flex-col gap-5">
 			<div className="w-full relative overflow-hidden">
 				<img
 					src="https://terrabybattat.com/wp-content/uploads/grid_homepage-animals-in-tubes.jpg"
