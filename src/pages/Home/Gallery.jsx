@@ -9,7 +9,7 @@ const Gallery = () => {
 					className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 					alt=""
 				/>
-				<h1 className="absolute  bottom-0 left-1/4 text-center text-2xl font-bold text-blue-900">
+				<h1 className="absolute  bottom-3 left-1/4 text-center text-2xl font-bold text-blue-900">
 					Animals in Tubes
 				</h1>
 			</div>
@@ -20,7 +20,7 @@ const Gallery = () => {
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
 					/>
-					<h1 className="absolute  bottom-0 left-1/4 text-center text-2xl font-bold text-blue-900">
+					<h1 className="absolute  bottom-3 left-1/4 text-center text-2xl font-bold text-blue-900">
 						Wild Animals
 					</h1>
 				</div>
@@ -30,7 +30,7 @@ const Gallery = () => {
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
 					/>
-					<h1 className="absolute  bottom-0 left-1/4 text-center text-2xl font-bold text-blue-900">
+					<h1 className="absolute  bottom-3 left-1/4 text-center text-2xl font-bold text-blue-900">
 						Dinosaurs
 					</h1>
 				</div>
@@ -40,7 +40,7 @@ const Gallery = () => {
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
 					/>
-					<h1 className="absolute  bottom-0 left-1/4 text-center text-2xl font-bold text-blue-900">
+					<h1 className="absolute  bottom-3 left-1/4 text-center text-2xl font-bold text-blue-900">
 						Families
 					</h1>
 				</div>
@@ -50,7 +50,7 @@ const Gallery = () => {
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
 					/>
-					<h1 className="absolute  bottom-0 left-1/4 text-center text-2xl font-bold text-blue-900">
+					<h1 className="absolute  bottom-3 left-1/4 text-center text-2xl font-bold text-blue-900">
 						Dogs & Cats
 					</h1>
 				</div>

@@ -53,16 +53,16 @@ const Login = () => {
 			});
 	};
 	return (
-		<div className="px-5 md:px-28 py-10 flex gap-10 flex-col md:flex-row">
-			<div className="w-full bg-pink-300/50 rounded-lg">
+		<div className="px-5 md:px-28 py-10 flex flex-col md:flex-row bg-pink-50">
+			<div className="w-full rounded-lg h-auto">
 				<img
 					src={login}
 					alt="login"
-					className="w-full mix-blend-overlay rounded-lg"
+					className="w-full h-full"
 				/>
 			</div>
 
-			<div className="px-10 py-5 w-full border-2 rounded-lg">
+			<div className="bg-white p-5 md:p-10 w-full">
 				{error ? (
 					<BsEmojiAngry className="text-red-500 mx-auto h-12 w-auto" />
 				) : (
@@ -73,10 +73,10 @@ const Login = () => {
 					/>
 				)}
 
-				<h2 className="my-4 text-center text-3xl font-bold text-gray-900">
+				<h2 className="my-4 text-center md:text-3xl text-2xl font-bold text-gray-900">
 					Login to your account
 				</h2>
-               <div className="text-center p-3 bg-red-50 text-red-500 my-3 rounded-md">
+               <div className={`text-center p-3 bg-red-50 text-red-500 my-3 rounded-md ${error ? "block" : "hidden"}`}>
                     {
                         error ? <p>{error}</p> : <></>
                     }
