@@ -1,9 +1,10 @@
 import React from 'react';
+import Banner from './Banner';
 
 const Home = () => {
     return (
-        <div>
-            
+        <div className='space-y-10'>
+            <Banner/>
         </div>
     );
 };
