@@ -2,7 +2,7 @@ import React from "react";
 
 const Playset = () => {
 	return (
-		<div className="flex md:gap-10 flex-col md:flex-row bg-pink-50 p-5 rounded-lg">
+		<div className="flex md:gap-10 flex-col md:flex-row bg-[#eee9d7] p-5 rounded-lg">
 			<div className="w-full">
 				<object>
 					<param

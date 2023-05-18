@@ -4,7 +4,7 @@ import { Carousel, Typography, Button } from "@material-tailwind/react";
 const Banner = () => {
     
 	return (
-		<Carousel className="" transition={{ duration: 2 }}  autoplay  autoplayDelay={3000} loop >
+		<Carousel className="" transition={{ duration: 2 }}  autopla  autoplayDelay={3000} loop >
 			<div className="relative min-h-[calc(100vh-164px)] w-full">
 				<img
 					src="https://terrabybattat.com/wp-content/uploads/AN6003_LS_A.jpg"
