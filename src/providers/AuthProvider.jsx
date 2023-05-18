@@ -12,30 +12,24 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     
-    const createUser = (email, password) => {
+    const regWithEmailPass = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const googleProvider = new GoogleAuthProvider();
-    const githubProvider = new GithubAuthProvider();
 
-    const googleSignIn = () =>{
+    const loginWithGoogle = () =>{
         setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
-    const githubSignIn = () =>{
-        setLoading(true);
-        return signInWithPopup(auth, githubProvider);
-    }
-
-    const signIn = (email, password) => {
+    const loginWithEmailPass = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const forgotPass = (email) => {
+    const recoverPass = (email) => {
         setLoading(true);
         return sendPasswordResetEmail(auth, email);
     }
@@ -61,11 +55,10 @@ const AuthProvider = ({children}) => {
         user,
         setUser,
         loading,
-        createUser,
-        signIn,
-        googleSignIn,
-        githubSignIn,
-        forgotPass,
+        regWithEmailPass,
+        loginWithEmailPass,
+        loginWithGoogle,
+        recoverPass,
         logOut
     }
 

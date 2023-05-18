@@ -3,17 +3,17 @@ import Banner from './Banner';
 import Gallery from './Gallery';
 import Playset from './Playset';
 import ToyTrip from './ToyTrip';
+import Review from './Review';
 
 const Home = () => {
     return (
-        <div className='space-y-10'>
+        <div className='space-y-10 py-10 px-5 md:px-28'>
             <Banner/>
-            <div className='px-5 md:px-28 space-y-10'>
                 <Gallery/>
 
                  <Playset/>
                  <ToyTrip/>
-            </div>
+                 <Review/>
         </div>
     );
 };

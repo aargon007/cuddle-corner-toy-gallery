@@ -6,7 +6,17 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const NavBar = () => {
-	const { user } = useContext(AuthContext);
+	const { user,logOut } = useContext(AuthContext);
+
+	const handleLogOut = () => {
+        logOut()
+        .then(result => {
+            setUser(null)
+        })
+        .catch(error => {
+            console.log(error.message)
+        })
+    }
 
 	const menuList = [
 		{ name: "Home", to: "/", current: true },
@@ -14,16 +24,11 @@ const NavBar = () => {
 		{ name: "All Toys", to: "/all-toys", current: false },
 	];
 
-	const userSpecificMenu = [
-		{ name: "My Toys", to: "/my-toys", current: false },
-		{ name: "Add a Toy", to: "/add-toy", current: false },
-	];
-
 	return (
-		<Disclosure as="nav" className="py-2 bg-pink-50">
+		<Disclosure as="nav" className="py-2 bg-[url(https://terrabybattat.com/wp-content/uploads/header-bg-logo.png)] bg-no-repeat bg-[#eee9d7] bg-overlay bg-bottom">
 			{({ open }) => (
 				<>
-					<div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+					<div className="px-5 md:px-28">
 						<div className="relative flex h-16 items-center justify-between">
 							<div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
 								{/* Mobile menu button*/}
@@ -85,14 +90,37 @@ const NavBar = () => {
 												>
 													Add a Toy
 												</NavLink>
-												<NavLink
-													to="/user"
-													className={({ isActive }) =>
-														isActive ? "activeLink" : "defaultLink"
-													}
+												<div
+													className="flex justify-center items-center gap-2 bg-blue-50 py-1 px-2 rounded-lg"
+													title={user?.displayName}
 												>
-													user
-												</NavLink>
+													{user?.photoURL ? (
+														<img
+															src={user?.photoURL}
+															className="w-8 h-8 rounded-full"
+															title={user?.displayName}
+														/>
+													) : (
+														<img
+															src="https://www.pngall.com/wp-content/uploads/5/Profile-Transparent.png"
+															className="w-8 h-8 rounded-full"
+															title={user?.displayName}
+														/>
+													)}
+													{user?.displayName ? (
+														<p className="">{user?.displayName}</p>
+													) : (
+														<p>user</p>
+													)}
+												</div>
+												{user && (
+													<button
+														onClick={handleLogOut}
+														className="py-1 px-3 rounded-lg border hover:bg-blue-500 hover:text-white border-black transition-all"
+													>
+														Log out
+													</button>
+												)}
 											</>
 										) : (
 											<NavLink

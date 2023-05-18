@@ -2,9 +2,9 @@ import React, { useRef } from "react";
 import { Carousel, Typography, Button } from "@material-tailwind/react";
 
 const Banner = () => {
-    
+	
 	return (
-		<Carousel className="" transition={{ duration: 2 }}  autopla  autoplayDelay={3000} loop >
+		<Carousel className="rounded-lg" transition={{ duration: 2}}  autoplay  autoplayDelay={7000} loop>
 			<div className="relative min-h-[calc(100vh-164px)] w-full">
 				<img
 					src="https://terrabybattat.com/wp-content/uploads/AN6003_LS_A.jpg"
@@ -137,8 +137,8 @@ const Banner = () => {
 					</div>
 				</div>
 			</div>
-			<div className="relative min-h-[calc(100vh-164px)] w-full">
-				<img
+			<div className="relative min-h-[calc(100vh-164px)] w-full leading-normal">
+				<img 
 					src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-dogs-cats.jpg"
 					alt="image 1"
 					className=" w-full h-[calc(100vh-164px)] object-cover"
@@ -170,8 +170,6 @@ const Banner = () => {
 					</div>
 				</div>
 			</div>
-			
-				
 		</Carousel>
 	);
 };
