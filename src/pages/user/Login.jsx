@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { GoMail } from "react-icons/go";
 import { FaLock, FaUser } from "react-icons/fa";
 import login from "../../assets/login.jpg";
@@ -6,12 +6,15 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { BsEmojiAngry } from "react-icons/bs";
+import Swal from "sweetalert2";
 
 const Login = () => {
 	const { loginWithEmailPass, loginWithGoogle, recoverPass, setUser } =
 		useContext(AuthContext);
 
 	const [error, setError] = useState(null);
+	const emailRef = useRef();
+
 	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location.state?.from?.pathname || "/";
@@ -20,7 +23,7 @@ const Login = () => {
 		loginWithGoogle()
 			.then((result) => {
 				const loggedUser = result.user;
-				console.log(loggedUser);
+				// console.log(loggedUser);
 				setUser(loggedUser);
 				navigate(from, { replace: true });
 			})
@@ -38,7 +41,8 @@ const Login = () => {
 		loginWithEmailPass(email, password)
 			.then((result) => {
 				const loggedUser = result.user;
-				console.log(loggedUser);
+				setUser(loggedUser);
+				// console.log(loggedUser);
 				form.reset();
 				navigate(from, { replace: true });
 			})
@@ -52,6 +56,28 @@ const Login = () => {
 				}
 			});
 	};
+
+	const handleRecoverPass = event => {
+		const email = emailRef.current.value;
+		// console.log(email);
+		if(!email){
+			Swal.fire(
+				'Oops!',
+				'Please provide a email address!',
+				'warning'
+			  )
+		}
+		recoverPass(email)
+		.then( () => {
+			Swal.fire(
+				'Success',
+				'We sent a recovery password link to your email. Please check it.',
+				'success'
+			  )
+		})
+		.catch(error => console.log(error))
+	}
+
 	return (
 		<div className="px-5 md:px-28 py-10 flex flex-col md:flex-row bg-pink-50">
 			<div className="w-full rounded-lg h-auto">
@@ -92,7 +118,8 @@ const Login = () => {
 						<div className="flex items-center text-lg mb-5">
 							<FaUser className="absolute ml-3 w-6" />
 							<input
-								type="email"
+								type="email" 
+								ref={emailRef}
 								id="email"
 								name="email"
 								autoComplete="email"
@@ -110,7 +137,7 @@ const Login = () => {
 							>
 								Password
 							</label>
-							<button className="font-semibold text-indigo-400 hover:text-indigo-600">
+							<button onClick={handleRecoverPass} className="font-semibold text-indigo-400 hover:text-indigo-600">
 								Forgot password?
 							</button>
 						</div>
