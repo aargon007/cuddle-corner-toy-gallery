@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Navigate, useLocation } from 'react-router';
 import { AuthContext } from '../providers/AuthProvider';
 import SpinnerGlobal from '../pages/shared/SpinnerGlobal';
+import Swal from 'sweetalert2';
 
 const PrivateRoute = ({children}) => {
 
@@ -16,6 +17,11 @@ const PrivateRoute = ({children}) => {
     if(user){
         return children;
     }
+    Swal.fire(
+        "Stop!",
+        "You have to log in first to continue",
+        "error"
+    );
     return <Navigate state={{from: location}} to="/login" replace></Navigate>;
 };
 

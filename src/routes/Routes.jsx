@@ -10,6 +10,7 @@ import AllToys from '../pages/PublicToys/AllToys';
 import MyToy from '../pages/Toy/MyToy';
 import PrivateRoute from './PrivateRoute';
 import AddToy from '../pages/Toy/AddToy';
+import ViewToyDetails from '../pages/Toy/ViewToyDetails';
 
 const router = createBrowserRouter([
     {
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path : '/all-toys',
                 element : <AllToys/>,
-                loader : () => fetch('https://cuddle-corner-server.vercel.app/all-toys')
+                loader : () => fetch('https://cuddle-corner-server-production.up.railway.app/all-toys')
             },
             {
                 path : '/my-toys',
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
             {
                 path : '/add-toy',
                 element : <PrivateRoute><AddToy/></PrivateRoute>
+            },
+            {
+                path : '/product/:id',
+                element : <PrivateRoute><ViewToyDetails/></PrivateRoute>,
+                loader : ({params}) => fetch(`https://cuddle-corner-server-production.up.railway.app/product/${params.id}`)
             }
         ]
     }

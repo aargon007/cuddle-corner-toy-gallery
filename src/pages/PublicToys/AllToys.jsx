@@ -1,20 +1,21 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import Swal from "sweetalert2";
 
 const AllToys = () => {
 
     const loadedToys = useLoaderData();
+	// console.log(loadedToys.length);
 
     const [toys, setToys] = useState(loadedToys)
 	const [searchKey, setSearchKey] = useState("");
 
 	const handleSearch = () => {
-        fetch(`https://cuddle-corner-server.vercel.app/all-toys/${searchKey}`)
+        fetch(`https://cuddle-corner-server-production.up.railway.app/all-toys/${searchKey}`)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data.length);
+            // console.log(data.length);
             if(data.length == 0){
                 Swal.fire(
                     "Ooops!",
@@ -112,7 +113,7 @@ const AllToys = () => {
 									<span className="inline-block w-1/3 md:hidden font-bold">
 										Price :
 									</span>
-									$ {toy?.price ? toy?.price : "0"}
+									$ {toy?.price ? toy?.price : "5"}
 								</td>
 								<td className="tdstyle">
 									<span className="inline-block w-1/3 md:hidden font-bold">
@@ -127,9 +128,9 @@ const AllToys = () => {
 									{toy?.sellerName ? toy?.sellerName : "Anonymous"}
 								</td>
 								<td className="tdstyle">
-									<button className="py-2 px-3 inline-flex text-xs text-white leading-5 font-semibold rounded-full bg-green-500 hover:bg-blue-700">
+									<Link to={`/product/${toy._id}`} className="py-2 px-3 inline-flex text-xs text-white leading-5 font-semibold rounded-full bg-green-500 hover:bg-blue-700">
 										View Details
-									</button>
+									</Link>
 								</td>
 							</tr>
 						))}

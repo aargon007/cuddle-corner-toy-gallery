@@ -28,7 +28,7 @@ const AddToy = () => {
 		data.sub_category = selectedOption;
 
 		if (data) {
-			fetch("https://cuddle-corner-server.vercel.app/add-toy", {
+			fetch("https://cuddle-corner-server-production.up.railway.app/add-toy", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -37,7 +37,7 @@ const AddToy = () => {
 			})
 				.then((res) => res.json())
 				.then((result) => {
-					console.log(result);
+					// console.log(result);
 					if (result.insertedId) {
 						Swal.fire(
 							"Good job!",
