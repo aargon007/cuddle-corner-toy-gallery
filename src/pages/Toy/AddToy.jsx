@@ -28,7 +28,7 @@ const AddToy = () => {
 		data.sub_category = selectedOption;
 
 		if (data) {
-			fetch("http://localhost:5000/add-toy", {
+			fetch("https://cuddle-corner-server.vercel.app/add-toy", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
