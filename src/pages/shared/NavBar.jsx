@@ -27,13 +27,13 @@ const NavBar = () => {
 	return (
 		<Disclosure
 			as="nav"
-			className="py-2 font-inter bg-[url(https://terrabybattat.com/wp-content/uploads/header-bg-logo.png)] bg-no-repeat bg-[#eee9d7] bg-overlay bg-bottom"
+			className="py-2 font-inter bg-[url(https://terrabybattat.com/wp-content/uploads/header-bg-logo.png)] bg-no-repeat bg-[#eee9d7] bg-overlay bg-top"
 		>
 			{({ open }) => (
 				<>
 					<div className="px-5 md:px-28">
 						<div className="relative flex h-16 items-center justify-between">
-							<div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
+							<div className="absolute inset-y-0 right-0 flex items-center md:hidden ">
 								{/* Mobile menu button*/}
 								<Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700 hover:text-white outline-none">
 									<span className="sr-only">Open main menu</span>
@@ -59,7 +59,7 @@ const NavBar = () => {
 							</div>
 							{/* menu list  */}
 							<div className="flex items-center justify-center sm:items-stretch sm:justify-start">
-								<div className="hidden sm:ml-6 sm:block">
+								<div className="hidden sm:ml-6 md:block">
 									<div className="flex space-x-4">
 										{/* menu for all user  */}
 										{menuList.map((item) => (
@@ -141,7 +141,7 @@ const NavBar = () => {
 						</div>
 					</div>
 
-					<Disclosure.Panel className="sm:hidden">
+					<Disclosure.Panel className="md:hidden ">
 						{({ close }) => (
 							<div className="space-y-2 px-2 pb-5 pt-2">
 								{menuList.map((item) => (
