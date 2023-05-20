@@ -44,6 +44,39 @@ const MySingleToy = ({ toy, setControl, control }) => {
 			});
 	};
 
+	const handleDeleteToy = (id) => {
+		Swal.fire({
+			title: "Are you sure?",
+			text: "You won't be able to revert this!",
+			icon: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#3085d6",
+			cancelButtonColor: "#d33",
+			confirmButtonText: "Yes, delete it!",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				fetch(
+					`https://cuddle-corner-server-production.up.railway.app/deleteToy/${id}`,
+					{
+						method: "DELETE",
+					}
+				)
+					.then((res) => res.json())
+					.then((data) => {
+						// console.log(data);
+						if (data.deletedCount > 0) {
+							setControl(!control);
+							Swal.fire(
+								'Deleted!',
+								'Your file has been deleted.',
+								'success'
+							  )
+						}
+					});
+			}
+		});
+	};
+
 	return (
 		<>
 			<tr className="hover:bg-gray-100 bg-white border-t border-gray-500 block md:table-row">
@@ -194,14 +227,17 @@ const MySingleToy = ({ toy, setControl, control }) => {
 														</div>
 													</div>
 													<div className="flex gap-3 items-center">
-														<button onClick={closeModal} className="text-white bg-gray-800 px-10 py-2 mt-5 rounded-md w-full">
+														<button
+															onClick={closeModal}
+															className="text-white bg-gray-800 px-10 py-2 mt-5 rounded-md w-full"
+														>
 															Close
 														</button>
 														<input
-														className="bg-green-600 hover:bg-green-800 text-white mt-5 px-10 py-2 text-center w-full rounded-md"
-														value="Update Data"
-														type="submit"
-													/>
+															className="bg-green-600 hover:bg-green-800 text-white mt-5 px-10 py-2 text-center w-full rounded-md"
+															value="Update Data"
+															type="submit"
+														/>
 													</div>
 												</div>
 											</form>
@@ -211,7 +247,7 @@ const MySingleToy = ({ toy, setControl, control }) => {
 							</div>
 						</Dialog>
 					</Transition>
-					<button className="py-2 px-3 text-xs text-white leading-5 font-semibold rounded-lg bg-red-400 hover:bg-red-900">
+					<button onClick={() => handleDeleteToy(toy?._id)} className="py-2 px-3 text-xs text-white leading-5 font-semibold rounded-lg bg-red-400 hover:bg-red-900">
 						Delete
 					</button>
 				</td>
