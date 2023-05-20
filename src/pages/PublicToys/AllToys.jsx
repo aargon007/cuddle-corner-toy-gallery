@@ -98,7 +98,7 @@ const AllToys = () => {
 											alt=""
 										/>
 
-										<div className="ml-4 text-sm font-medium text-gray-900">
+										<div className="ml-4 font-medium text-gray-900">
 											{toy?.toyName}
 										</div>
 									</div>
@@ -119,7 +119,7 @@ const AllToys = () => {
 									<span className="inline-block w-1/3 md:hidden font-bold">
 										Available Quantity :
 									</span>
-									{toy?.quantity ? toy?.quantity : "0"}
+									{toy?.quantity ? toy?.quantity : "stock out"}
 								</td>
 								<td className="tdstyle">
 									<span className="inline-block w-1/3 md:hidden font-bold">
@@ -128,7 +128,7 @@ const AllToys = () => {
 									{toy?.sellerName ? toy?.sellerName : "Anonymous"}
 								</td>
 								<td className="tdstyle">
-									<Link to={`/product/${toy._id}`} className="py-2 px-3 inline-flex text-xs text-white leading-5 font-semibold rounded-full bg-green-500 hover:bg-blue-700">
+									<Link to={`/toy/${toy._id}`} className="py-2 px-3 inline-flex text-xs text-white leading-5 font-semibold rounded-full bg-green-500 hover:bg-blue-700">
 										View Details
 									</Link>
 								</td>

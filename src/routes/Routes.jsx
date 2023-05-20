@@ -41,16 +41,16 @@ const router = createBrowserRouter([
             },
             {
                 path : '/my-toys',
-                element : <PrivateRoute><MyToy/></PrivateRoute>
+                element : <PrivateRoute><MyToy/></PrivateRoute>,
             },
             {
                 path : '/add-toy',
                 element : <PrivateRoute><AddToy/></PrivateRoute>
             },
             {
-                path : '/product/:id',
+                path : '/toy/:id',
                 element : <PrivateRoute><ViewToyDetails/></PrivateRoute>,
-                loader : ({params}) => fetch(`https://cuddle-corner-server-production.up.railway.app/product/${params.id}`)
+                loader : ({params}) => fetch(`https://cuddle-corner-server-production.up.railway.app/toy/${params.id}`)
             }
         ]
     }

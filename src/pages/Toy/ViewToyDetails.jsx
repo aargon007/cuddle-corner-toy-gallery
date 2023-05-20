@@ -22,12 +22,17 @@ const ViewToyDetails = () => {
 		<div className="py-10 px-5 md:px-28">
 			<div className="flex items-center flex-col md:flex-row">
 				<div className="w-full h-full px-10">
-					<img src={image} alt="" className="w-full h-[400px]"/>
+					<img src={image} alt="" className="w-full h-[400px]" />
 				</div>
 				<div className="w-full space-y-5">
 					<h1 className="text-3xl font-semibold">{toyName}</h1>
-                    <p> <span className="font-semibold ">Price :  </span>${price}</p>
-                    <p> <span className="font-semibold ">Available Quantity : </span>{quantity}</p>
+					<p>
+						<span className="font-semibold ">Price :</span>$ {price ? price : 5}
+					</p>
+					<p>
+						<span className="font-semibold ">Available Quantity : </span>
+						{quantity ? quantity : 'stock out'}
+					</p>
 					<div className="flex ">
 						<Rating
 							style={{ maxWidth: 120, marginRight: 5 }}
@@ -55,10 +60,12 @@ const ViewToyDetails = () => {
 					<p>Seller Email : {sellerEmail}</p>
 				</div>
 			</div>
-            <div className=" bg-[#fff9ed] px-5 py-10 mt-5">
-                <p className="text-center mb-3 font-semibold text-xl text-amber-900">Description</p>
-                <p className="leading-loose tracking-wider">{description}</p>
-            </div>
+			<div className=" bg-[#fff9ed] px-5 py-10 mt-5">
+				<p className="text-center mb-3 font-semibold text-xl text-amber-900">
+					Description
+				</p>
+				<p className="leading-loose tracking-wider">{description}</p>
+			</div>
 		</div>
 	);
 };

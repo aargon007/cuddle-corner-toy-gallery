@@ -11,10 +11,10 @@
 		@apply block rounded-md px-3 py-2 text-base font-medium hover:bg-blue-300 hover:text-white
 	}
 	.add-toy-cls {
-		@apply block w-full rounded-md border-0 outline-none py-2 px-3 text-gray-900 shadow-md placeholder:text-gray-400 sm:leading-6
+		@apply block w-full rounded-md border-0 outline-none py-2 px-3 text-gray-900 placeholder:text-gray-400 sm:leading-6
 	}
 	.tablehead {
-		@apply bg-gray-600 p-2 text-white font-bold md:border md:border-gray-500 text-left block md:table-cell
+		@apply bg-gray-600 py-2 px-5 text-white font-bold md:border md:border-gray-500 text-left block md:table-cell
 	}
 	.tdstyle {
 		@apply px-5 py-2 border border-gray-100 md:border-none text-left  md:table-cell align-middle flex items-center

@@ -166,10 +166,10 @@ const Login = () => {
 				<div>
 					<button
 						onClick={handleGoogleLogin}
-						className="text-center text-xl flex items-center gap-2 border-2 bg-blue-200 hover:bg-blue-400 rounded-lg py-3 px-5 mx-auto mt-5"
+						className="text-center text-xl flex items-center gap-2 border-2 bg-blue-500 hover:bg-blue-400 rounded-lg py-3 px-5 mx-auto mt-5"
 					>
 						<FcGoogle className="bg-white text-2xl p-px rounded-full" />{" "}
-						<span>Google</span>
+						<span className="text-white">Google</span>
 					</button>
 				</div>
 				<p className="mt-8 text-center">
