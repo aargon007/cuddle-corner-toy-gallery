@@ -1,9 +1,12 @@
 import React from 'react';
 import { useNavigate, useRouteError } from 'react-router-dom';
 import errorImage from '../../assets/404error.jpg'
+import useTitle from '../../Hooks/useTitle';
 
 const ErrorPage = () => {
     const navigate = useNavigate();
+
+    useTitle("Cuddle Corner - page not found");
 
     const goBack = () => {
         navigate(-1);

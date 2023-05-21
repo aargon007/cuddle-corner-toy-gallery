@@ -3,14 +3,17 @@ import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import MySingleToy from "./MySingleToy";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import useTitle from "../../Hooks/useTitle";
 
 const MyToy = () => {
+
 	const { user } = useContext(AuthContext);
 
     const [myToys, setMyToys] = useState([]);
     const [control, setControl] = useState(false);
 	const [sort, setSort] = useState(false);
 	const [isAscending, setIsAscending] = useState(true);
+
 	useEffect(() => {
         const loadData = async() => {
             const res = await fetch(`https://cuddle-corner-server-production.up.railway.app/my-toys?sellerEmail=${user?.email}&isAscending=${isAscending}`);
@@ -24,7 +27,8 @@ const MyToy = () => {
 		setIsAscending(!isAscending)
 	}
 
-
+	useTitle("Cuddle Corner | My Toys");
+	
 	return (
 		<div className="px-5 md:px-28 py-10  bg-[#eee9d7]">
 			<h1 className="text-3xl text-center font-semibold text-green-700 uppercase mb-10">

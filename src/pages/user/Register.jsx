@@ -3,6 +3,7 @@ import register from "../../assets/register.jpg";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import useTitle from "../../Hooks/useTitle";
 
 const Register = () => {
 
@@ -11,6 +12,8 @@ const Register = () => {
     const [successUser, setSuccessUser] = useState(null);
 
     const {regWithEmailPass,user,setUser, logOut} = useContext(AuthContext);
+
+	useTitle("Cuddle Corner | Register")
 
     const handleCreateAccount = event => {
         event.preventDefault();

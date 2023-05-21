@@ -3,11 +3,12 @@ import NavBar from '../pages/shared/NavBar';
 import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom';
 import Footer from '../pages/shared/Footer';
 import SpinnerGlobal from '../pages/shared/SpinnerGlobal';
+import useTitle from '../Hooks/useTitle';
 
 const Main = () => {
 
     const navigation = useNavigation();
-
+    useTitle("Cuddle Corner - animal toys for kidz")
     return (
         <div className=''>
             <NavBar/>

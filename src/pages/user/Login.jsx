@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { BsEmojiAngry } from "react-icons/bs";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const Login = () => {
 	const { loginWithEmailPass, loginWithGoogle, recoverPass, setUser } =
@@ -14,6 +15,8 @@ const Login = () => {
 
 	const [error, setError] = useState(null);
 	const emailRef = useRef();
+
+	useTitle("Cuddle Corner | Login")
 
 	const navigate = useNavigate();
 	const location = useLocation();

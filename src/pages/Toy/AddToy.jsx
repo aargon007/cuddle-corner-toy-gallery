@@ -3,10 +3,14 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import CreatableSelect from "react-select/creatable";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const AddToy = () => {
+
 	const { user } = useContext(AuthContext);
 	const [selectedOption, setSelectedOption] = useState("");
+
+	useTitle("Cuddle Corner | Add a toy product")
 
 	const {
 		register,

@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const AllToys = () => {
 
+	useTitle("Cuddle Corner | All Toys")
+	
     const loadedToys = useLoaderData();
 	// console.log(loadedToys.length);
 
