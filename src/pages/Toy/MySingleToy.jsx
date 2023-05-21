@@ -22,6 +22,7 @@ const MySingleToy = ({ toy, setControl, control }) => {
 	} = useForm();
 
 	const handleToyUpdate = (data) => {
+		data.price = parseFloat(data.price)
 		// console.log(data);
 		fetch(
 			`https://cuddle-corner-server-production.up.railway.app/updateToy/${toy._id}`,
@@ -234,7 +235,7 @@ const MySingleToy = ({ toy, setControl, control }) => {
 															Close
 														</button>
 														<input
-															className="bg-green-600 hover:bg-green-800 text-white mt-5 px-10 py-2 text-center w-full rounded-md"
+															className="bg-green-600 cursor-pointer hover:bg-green-800 text-white mt-5 px-10 py-2 text-center w-full rounded-md"
 															value="Update Data"
 															type="submit"
 														/>

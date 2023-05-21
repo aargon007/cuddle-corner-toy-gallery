@@ -2,22 +2,27 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import MySingleToy from "./MySingleToy";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
 const MyToy = () => {
 	const { user } = useContext(AuthContext);
 
     const [myToys, setMyToys] = useState([]);
-    
     const [control, setControl] = useState(false);
-
+	const [sort, setSort] = useState(false);
+	const [isAscending, setIsAscending] = useState(true);
 	useEffect(() => {
         const loadData = async() => {
-            const res = await fetch(`https://cuddle-corner-server-production.up.railway.app/my-toys/${user?.email}`);
+            const res = await fetch(`https://cuddle-corner-server-production.up.railway.app/my-toys?sellerEmail=${user?.email}&isAscending=${isAscending}`);
             const data = await res.json();
             setMyToys(data)
         }
         loadData()
-	}, [user, control]);
+	}, [user, control, isAscending]);
+
+	const handleSort = () => {
+		setIsAscending(!isAscending)
+	}
 
 
 	return (
@@ -36,8 +41,8 @@ const MyToy = () => {
 							<th scope="col" className="tablehead">
 								Sub-Category
 							</th>
-							<th scope="col" className="tablehead">
-								Price
+							<th scope="col" className="tablehead" onClick={handleSort}>
+								Price {isAscending ? <FaArrowUp className="ms-2 text-yellow-500 inline"/> : <FaArrowDown className="ms-2 text-yellow-500 inline"></FaArrowDown>}
 							</th>
 							<th scope="col" className="tablehead">
 								Avaiable quantity
