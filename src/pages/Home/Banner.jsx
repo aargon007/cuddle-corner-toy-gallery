@@ -20,24 +20,24 @@ const Banner = () => {
 						<Typography
 							variant="h1"
 							color="white"
-							className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+							className="mb-4 text-xl md:text-3xl lg:text-5xl"
 						>
 							All The Little Dinos
 						</Typography>
 						<Typography
 							variant="lead"
 							color="white"
-							className="mb-12 opacity-80"
+							className="mb-12 text-sm md:text-base opacity-80"
 						>
 							Dig up loads of prehistoric fun!
 						</Typography>
 						<div className="flex justify-center gap-2">
 							<Link to="/all-toys">
-								<Button size="lg" color="white">
+								<Button size="sm" color="white">
 									Explore
 								</Button>
 							</Link>
-							<Button size="lg" color="white" variant="text">
+							<Button size="sm" color="white" variant="text">
 								Gallery
 							</Button>
 						</div>
@@ -57,25 +57,25 @@ const Banner = () => {
 						<Typography
 							variant="h1"
 							color="white"
-							className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+							className="mb-4 text-xl md:text-3xl lg:text-5xl"
 						>
 							Play with Our Family Toys
 						</Typography>
 						<Typography
 							variant="lead"
 							color="white"
-							className="mb-12 opacity-80"
+							className="mb-12 text-sm md:text-base opacity-80"
 						>
 							Learn about the environment with our selection of wild animal
 							families. These toys are perfect for sensory play.
 						</Typography>
 						<div className="flex justify-center gap-2">
 							<Link to="/all-toys">
-								<Button size="lg" color="white">
+								<Button size="sm" color="white">
 									Explore
 								</Button>
 							</Link>
-							<Button size="lg" color="white" variant="text">
+							<Button size="sm" color="white" variant="text">
 								Gallery
 							</Button>
 						</div>
@@ -95,25 +95,25 @@ const Banner = () => {
 						<Typography
 							variant="h1"
 							color="white"
-							className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+							className="mb-4 text-xl md:text-3xl lg:text-5xl"
 						>
 							All The Wild Animals on Your Side
 						</Typography>
 						<Typography
 							variant="lead"
 							color="white"
-							className="mb-12 opacity-80"
+							className="mb-12 text-sm md:text-base opacity-80"
 						>
 							Get outside! Lets get wild with these detailed animals from the
 							mountains to the jungle.
 						</Typography>
 						<div className="flex justify-center gap-2">
 							<Link to="/all-toys">
-								<Button size="lg" color="white">
+								<Button size="sm" color="white">
 									Explore
 								</Button>
 							</Link>
-							<Button size="lg" color="white" variant="text">
+							<Button size="sm" color="white" variant="text">
 								Gallery
 							</Button>
 						</div>
@@ -133,25 +133,25 @@ const Banner = () => {
 						<Typography
 							variant="h1"
 							color="white"
-							className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+							className="mb-4 text-xl md:text-3xl lg:text-5xl"
 						>
 							Want To Play with our Farm Toys?
 						</Typography>
 						<Typography
 							variant="lead"
 							color="white"
-							className="mb-12 opacity-80"
+							className="mb-12 text-sm md:text-base opacity-80"
 						>
 							It's a day at the farm, with Terra's baryard gang of realistic
 							farm animal toys.
 						</Typography>
 						<div className="flex justify-center gap-2">
 							<Link to="/all-toys">
-								<Button size="lg" color="white">
+								<Button size="sm" color="white">
 									Explore
 								</Button>
 							</Link>
-							<Button size="lg" color="white" variant="text">
+							<Button size="sm" color="white" variant="text">
 								Gallery
 							</Button>
 						</div>
@@ -171,25 +171,25 @@ const Banner = () => {
 						<Typography
 							variant="h1"
 							color="white"
-							className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+							className="mb-4 text-xl md:text-3xl lg:text-5xl"
 						>
 							Dogs & Cats
 						</Typography>
 						<Typography
 							variant="lead"
 							color="white"
-							className="mb-12 opacity-80"
+							className="mb-12 text-sm md:text-base opacity-80"
 						>
 							Adopt a pet or maybe two! These realistic small dog and cat toys
 							are purrrfect for playtime and ready to love.
 						</Typography>
 						<div className="flex justify-center gap-2">
 							<Link to="/all-toys">
-								<Button size="lg" color="white">
+								<Button size="sm" color="white">
 									Explore
 								</Button>
 							</Link>
-							<Button size="lg" color="white" variant="text">
+							<Button size="sm" color="white" variant="text">
 								Gallery
 							</Button>
 						</div>

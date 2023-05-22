@@ -91,7 +91,7 @@ const AllToys = () => {
 								className="hover:bg-gray-100 bg-white border-t border-gray-500 block md:table-row"
 							>
 								<td className="tdstyle">
-									<span className="inline-block w-1/3 md:hidden font-bold">
+									<span className="inline-block me-2 md:hidden font-bold">
 										Toy Name :
 									</span>
 									<div className="inline-flex items-center">
@@ -109,25 +109,25 @@ const AllToys = () => {
 									</div>
 								</td>
 								<td className="tdstyle">
-									<span className="inline-block w-1/3 md:hidden font-bold">
+									<span className="inline-block me-2 md:hidden font-bold">
 										Sub Category :
 									</span>
 									{toy?.sub_category?.label}
 								</td>
 								<td className="tdstyle">
-									<span className="inline-block w-1/3 md:hidden font-bold">
+									<span className="inline-block me-2 md:hidden font-bold">
 										Price :
 									</span>
 									$ {toy?.price ? toy?.price : "5"}
 								</td>
 								<td className="tdstyle">
-									<span className="inline-block w-1/3 md:hidden font-bold">
+									<span className="inline-block me-2 md:hidden font-bold">
 										Available Quantity :
 									</span>
 									{toy?.quantity ? toy?.quantity : "stock out"}
 								</td>
 								<td className="tdstyle">
-									<span className="inline-block w-1/3 md:hidden font-bold">
+									<span className="inline-block me-2 md:hidden font-bold">
 										Seller Name :
 									</span>
 									{toy?.sellerName ? toy?.sellerName : "Anonymous"}

@@ -66,7 +66,7 @@ const ShopByCategory = () => {
 									key={selectCategory._id}
 									className="shadow-xl rounded-xl duration-500 hover:shadow-black/50 md:hover:scale-105 hover:shadow-xl"
 								>
-									<LazyLoad className="md:h-[250px] h-[380px]">
+									<LazyLoad className="md:h-[250px] h-[320px]">
 									<img
 										className="w-full mx-auto px-10 pt-10"
 										src={selectCategory?.image}
