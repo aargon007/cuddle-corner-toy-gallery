@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
 import { Carousel, Typography, Button } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
-	
+	//autoplay  autoplayDelay={7000} loop
 	return (
-		<Carousel className="rounded-lg" transition={{ duration: 2}}  autoplay  autoplayDelay={7000} loop>
+		<Carousel className="rounded-lg" transition={{ duration: 2 }}>
 			<div className="relative min-h-[calc(100vh-164px)] w-full">
 				<img
 					src="https://terrabybattat.com/wp-content/uploads/AN6003_LS_A.jpg"
@@ -28,9 +29,11 @@ const Banner = () => {
 							Dig up loads of prehistoric fun!
 						</Typography>
 						<div className="flex justify-center gap-2">
-							<Button size="lg" color="white">
-								Explore
-							</Button>
+							<Link to="/all-toys">
+								<Button size="lg" color="white">
+									Explore
+								</Button>
+							</Link>
 							<Button size="lg" color="white" variant="text">
 								Gallery
 							</Button>
@@ -51,19 +54,22 @@ const Banner = () => {
 							color="white"
 							className="mb-4 text-3xl md:text-4xl lg:text-5xl"
 						>
-							Play with  Our Family Toys
+							Play with Our Family Toys
 						</Typography>
 						<Typography
 							variant="lead"
 							color="white"
 							className="mb-12 opacity-80"
 						>
-							Learn about the environment with our selection of wild animal families. These toys are perfect for sensory play.
+							Learn about the environment with our selection of wild animal
+							families. These toys are perfect for sensory play.
 						</Typography>
 						<div className="flex justify-center gap-2">
-							<Button size="lg" color="white">
-								Explore
-							</Button>
+							<Link to="/all-toys">
+								<Button size="lg" color="white">
+									Explore
+								</Button>
+							</Link>
 							<Button size="lg" color="white" variant="text">
 								Gallery
 							</Button>
@@ -91,12 +97,15 @@ const Banner = () => {
 							color="white"
 							className="mb-12 opacity-80"
 						>
-							Get outside! Lets get wild with these detailed animals from the mountains to the jungle.
+							Get outside! Lets get wild with these detailed animals from the
+							mountains to the jungle.
 						</Typography>
 						<div className="flex justify-center gap-2">
-							<Button size="lg" color="white">
-								Explore
-							</Button>
+							<Link to="/all-toys">
+								<Button size="lg" color="white">
+									Explore
+								</Button>
+							</Link>
 							<Button size="lg" color="white" variant="text">
 								Gallery
 							</Button>
@@ -124,12 +133,15 @@ const Banner = () => {
 							color="white"
 							className="mb-12 opacity-80"
 						>
-							It's a day at the farm, with Terra's baryard gang of realistic farm animal toys.
+							It's a day at the farm, with Terra's baryard gang of realistic
+							farm animal toys.
 						</Typography>
 						<div className="flex justify-center gap-2">
-							<Button size="lg" color="white">
-								Explore
-							</Button>
+							<Link to="/all-toys">
+								<Button size="lg" color="white">
+									Explore
+								</Button>
+							</Link>
 							<Button size="lg" color="white" variant="text">
 								Gallery
 							</Button>
@@ -138,7 +150,7 @@ const Banner = () => {
 				</div>
 			</div>
 			<div className="relative min-h-[calc(100vh-164px)] w-full leading-normal">
-				<img 
+				<img
 					src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-dogs-cats.jpg"
 					alt="image 1"
 					className=" w-full h-[calc(100vh-164px)] object-cover"
@@ -150,19 +162,22 @@ const Banner = () => {
 							color="white"
 							className="mb-4 text-3xl md:text-4xl lg:text-5xl"
 						>
-							Dogs & Cats 
+							Dogs & Cats
 						</Typography>
 						<Typography
 							variant="lead"
 							color="white"
 							className="mb-12 opacity-80"
 						>
-							Adopt a pet or maybe two! These realistic small dog and cat toys are purrrfect for playtime and ready to love.
+							Adopt a pet or maybe two! These realistic small dog and cat toys
+							are purrrfect for playtime and ready to love.
 						</Typography>
 						<div className="flex justify-center gap-2">
-							<Button size="lg" color="white">
-								Explore
-							</Button>
+							<Link to="/all-toys">
+								<Button size="lg" color="white">
+									Explore
+								</Button>
+							</Link>
 							<Button size="lg" color="white" variant="text">
 								Gallery
 							</Button>

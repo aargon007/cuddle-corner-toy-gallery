@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Gallery = () => {
+
+
 	return (
 		<div className="flex md:flex-row flex-col gap-5">
 			<div className="w-full relative overflow-hidden">
 				<img
+					data-aos="zoom-in"
 					src="https://terrabybattat.com/wp-content/uploads/grid_homepage-animals-in-tubes.jpg"
 					className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 					alt=""
@@ -16,6 +21,7 @@ const Gallery = () => {
 			<div className="grid md:grid-cols-2 gap-5 w-full">
 				<div className="w-full relative overflow-hidden">
 					<img
+					data-aos="zoom-in"
 						src="https://terrabybattat.com/wp-content/uploads/grid_homepage-wild-animals.jpg"
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
@@ -26,6 +32,7 @@ const Gallery = () => {
 				</div>
 				<div className="w-full relative overflow-hidden">
 					<img
+					data-aos="fade-up-left"
 						src="https://terrabybattat.com/wp-content/uploads/grid_homepage-dinosaurs.jpg"
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
@@ -36,6 +43,7 @@ const Gallery = () => {
 				</div>
 				<div className="w-full relative overflow-hidden">
 					<img
+					data-aos="zoom-in"
 						src="https://terrabybattat.com/wp-content/uploads/grid_homepage-animal-families.jpg"
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
@@ -46,6 +54,7 @@ const Gallery = () => {
 				</div>
 				<div className="w-full relative overflow-hidden">
 					<img
+					data-aos="zoom-in"
 						src="https://terrabybattat.com/wp-content/uploads/AN2104_LS-1-1024x1024.jpg"
 						className="h-full hover:scale-110 transition duration-500 cursor-pointer object-cover"
 						alt=""
