@@ -24,7 +24,7 @@ const AddToy = () => {
 		{ value: "wild", label: "Wild Animals" },
 		{ value: "dinos", label: "Dinosaurs" },
 		{ value: "families", label: "Families Animals" },
-		{ value: "dogs&Cats", label: "Dogs & Cats" },
+		{ value: "dogsCats", label: "Dogs and Cats" },
 		{ value: "farm", label: "Farm Animals" },
 	];
 

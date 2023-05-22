@@ -11,7 +11,7 @@ const MyToy = () => {
 
     const [myToys, setMyToys] = useState([]);
     const [control, setControl] = useState(false);
-	const [sort, setSort] = useState(false);
+	// const [sort, setSort] = useState(false);
 	const [isAscending, setIsAscending] = useState(true);
 
 	useEffect(() => {

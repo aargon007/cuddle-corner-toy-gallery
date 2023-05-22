@@ -5,6 +5,7 @@ import Playset from './Playset';
 import ToyTrip from './ToyTrip';
 import Review from './Review';
 import useTitle from '../../Hooks/useTitle';
+import ShopByCategory from './ShopByCategory';
 
 const Home = () => {
     useTitle("Cuddle Corner - animal toys for kidz")
@@ -12,7 +13,7 @@ const Home = () => {
         <div className='space-y-10 py-10 px-5 md:px-28'>
             <Banner/>
                 <Gallery/>
-
+                <ShopByCategory/>
                  <Playset/>
                  <ToyTrip/>
                  <Review/>
