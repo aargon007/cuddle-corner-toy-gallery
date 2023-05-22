@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import LazyLoad from "react-lazy-load";
 
 const NavBar = () => {
 	const { user, logOut } = useContext(AuthContext);
@@ -45,15 +46,21 @@ const NavBar = () => {
 								</Disclosure.Button>
 							</div>
 							<div className="flex gap-3">
-								<img
-									src="https://img.icons8.com/3d-fluency/94/butterfly.png"
-									alt=""
-									className="w-10 "
-								/>
+								<LazyLoad className="w-10">
+									<img
+										src="https://img.icons8.com/3d-fluency/94/butterfly.png"
+										alt=""
+										className="w-10 "
+									/>
+								</LazyLoad>
 								<div>
-									<h1 className="text-2xl font-semibold font-lobster">Cuddle Corner</h1>
+									<h1 className="text-2xl font-semibold font-lobster">
+										Cuddle Corner
+									</h1>
 									<p>
-										<small className="text-pink-700">Animal Toys for Kidz</small>
+										<small className="text-pink-700">
+											Animal Toys for Kidz
+										</small>
 									</p>
 								</div>
 							</div>
@@ -98,17 +105,21 @@ const NavBar = () => {
 													title={user?.displayName}
 												>
 													{user?.photoURL ? (
-														<img
-															src={user?.photoURL}
-															className="w-8 h-8 rounded-full"
-															title={user?.displayName}
-														/>
+														<LazyLoad className="w-8 h-8">
+															<img
+																src={user?.photoURL}
+																className="w-8 h-8 rounded-full"
+																title={user?.displayName}
+															/>
+														</LazyLoad>
 													) : (
-														<img
-															src="https://www.pngall.com/wp-content/uploads/5/Profile-Transparent.png"
-															className="w-8 h-8 rounded-full"
-															title={user?.displayName}
-														/>
+														<LazyLoad className="w-8 h-8">
+															<img
+																src="https://www.pngall.com/wp-content/uploads/5/Profile-Transparent.png"
+																className="w-8 h-8 rounded-full"
+																title={user?.displayName}
+															/>
+														</LazyLoad>
 													)}
 													{user?.displayName ? (
 														<p className="">{user?.displayName}</p>

@@ -26,12 +26,12 @@ const Playset = () => {
 				</h1>
 				<p className="leading-loose">
 					Animal toys are ideal educational tools for getting kids interested in
-					nature, history, and science. At Terra by Battat™, we create realistic
+					nature, history, and science. we create realistic
 					animal toys, dinosaur figurines, and playsets to inspire curious minds
 					and encourage creative play.
 				</p>
 				<p className="leading-loose mt-5">
-					Need a home for your animal kingdom? Pair your Terra by Battat™
+					Need a home for your animal kingdom? Pair your
 					collectible animal figurines with these realistic playsets and
 					accessories.
 				</p>

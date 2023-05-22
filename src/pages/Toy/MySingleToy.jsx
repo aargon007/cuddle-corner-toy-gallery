@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import React, { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
+import LazyLoad from "react-lazy-load";
 import Swal from "sweetalert2";
 
 const MySingleToy = ({ toy, setControl, control }) => {
@@ -22,7 +23,7 @@ const MySingleToy = ({ toy, setControl, control }) => {
 	} = useForm();
 
 	const handleToyUpdate = (data) => {
-		data.price = parseFloat(data.price)
+		data.price = parseFloat(data.price);
 		// console.log(data);
 		fetch(
 			`https://cuddle-corner-server-production.up.railway.app/updateToy/${toy._id}`,
@@ -67,11 +68,7 @@ const MySingleToy = ({ toy, setControl, control }) => {
 						// console.log(data);
 						if (data.deletedCount > 0) {
 							setControl(!control);
-							Swal.fire(
-								'Deleted!',
-								'Your file has been deleted.',
-								'success'
-							  )
+							Swal.fire("Deleted!", "Your file has been deleted.", "success");
 						}
 					});
 			}
@@ -86,7 +83,9 @@ const MySingleToy = ({ toy, setControl, control }) => {
 						Toy Name :
 					</span>
 					<div className="inline-flex items-center">
-						<img className="h-10 w-10 rounded-full" src={toy?.image} alt="" />
+						<LazyLoad className="h-10 w-10">
+							<img className="h-10 w-10 rounded-full" src={toy?.image} alt="" />
+						</LazyLoad>
 
 						<div className="ml-4 font-medium text-gray-900">{toy?.toyName}</div>
 					</div>
@@ -248,7 +247,10 @@ const MySingleToy = ({ toy, setControl, control }) => {
 							</div>
 						</Dialog>
 					</Transition>
-					<button onClick={() => handleDeleteToy(toy?._id)} className="py-2 px-3 text-xs text-white leading-5 font-semibold rounded-lg bg-red-400 hover:bg-red-900">
+					<button
+						onClick={() => handleDeleteToy(toy?._id)}
+						className="py-2 px-3 text-xs text-white leading-5 font-semibold rounded-lg bg-red-400 hover:bg-red-900"
+					>
 						Delete
 					</button>
 				</td>

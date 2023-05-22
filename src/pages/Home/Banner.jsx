@@ -1,17 +1,20 @@
 import React, { useRef } from "react";
 import { Carousel, Typography, Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import LazyLoad from "react-lazy-load";
 
 const Banner = () => {
 	//autoplay  autoplayDelay={7000} loop
 	return (
-		<Carousel className="rounded-lg" transition={{ duration: 2 }}>
+		<Carousel className="rounded-lg" transition={{ duration: 1 }}>
 			<div className="relative min-h-[calc(100vh-164px)] w-full">
-				<img
-					src="https://terrabybattat.com/wp-content/uploads/AN6003_LS_A.jpg"
-					alt="image 1"
-					className=" w-full h-[calc(100vh-164px)] object-cover"
-				/>
+				<LazyLoad className="w-full h-[calc(100vh-164px)]">
+					<img
+						src="https://terrabybattat.com/wp-content/uploads/AN6003_LS_A.jpg"
+						alt="image 1"
+						className=" w-full h-[calc(100vh-164px)] object-cover"
+					/>
+				</LazyLoad>
 				<div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
 					<div className="w-3/4 text-center md:w-2/4">
 						<Typography
@@ -42,11 +45,13 @@ const Banner = () => {
 				</div>
 			</div>
 			<div className="relative min-h-[calc(100vh-164px)] w-full">
-				<img
-					src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-families.jpg"
-					alt="image 1"
-					className=" w-full h-[calc(100vh-164px)] object-cover"
-				/>
+				<LazyLoad className="w-full h-[calc(100vh-164px)]">
+					<img
+						src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-families.jpg"
+						alt="image 1"
+						className=" w-full h-[calc(100vh-164px)] object-cover"
+					/>
+				</LazyLoad>
 				<div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
 					<div className="w-3/4 text-center md:w-2/4">
 						<Typography
@@ -78,11 +83,13 @@ const Banner = () => {
 				</div>
 			</div>
 			<div className="relative min-h-[calc(100vh-164px)] w-full">
-				<img
-					src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-wild.jpg"
-					alt="image 1"
-					className=" w-full h-[calc(100vh-164px)] object-cover"
-				/>
+				<LazyLoad className="w-full h-[calc(100vh-164px)]">
+					<img
+						src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-wild.jpg"
+						alt="image 1"
+						className=" w-full h-[calc(100vh-164px)] object-cover"
+					/>
+				</LazyLoad>
 				<div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
 					<div className="w-3/4 text-center md:w-2/4">
 						<Typography
@@ -114,11 +121,13 @@ const Banner = () => {
 				</div>
 			</div>
 			<div className="relative min-h-[calc(100vh-164px)] w-full">
-				<img
-					src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-farm.jpg"
-					alt="image 1"
-					className=" w-full h-[calc(100vh-164px)] object-cover"
-				/>
+				<LazyLoad>
+					<img
+						src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-farm.jpg"
+						alt="image 1"
+						className=" w-full h-[calc(100vh-164px)] object-cover"
+					/>
+				</LazyLoad>
 				<div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
 					<div className="w-3/4 text-center md:w-2/4">
 						<Typography
@@ -150,11 +159,13 @@ const Banner = () => {
 				</div>
 			</div>
 			<div className="relative min-h-[calc(100vh-164px)] w-full leading-normal">
-				<img
-					src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-dogs-cats.jpg"
-					alt="image 1"
-					className=" w-full h-[calc(100vh-164px)] object-cover"
-				/>
+				<LazyLoad className="w-full h-[calc(100vh-164px)]">
+					<img
+						src="https://terrabybattat.com/wp-content/uploads/header-cateogry_animal-toys-dogs-cats.jpg"
+						alt="image 1"
+						className=" w-full h-[calc(100vh-164px)] object-cover"
+					/>
+				</LazyLoad>
 				<div className="absolute inset-0 grid h-full w-full place-items-center bg-black/50">
 					<div className="w-3/4 text-center md:w-2/4">
 						<Typography

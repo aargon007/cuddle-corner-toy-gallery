@@ -8,6 +8,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { BsEmojiAngry } from "react-icons/bs";
 import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
+import LazyLoad from "react-lazy-load";
 
 const Login = () => {
 	const { loginWithEmailPass, loginWithGoogle, recoverPass, setUser } =
@@ -16,7 +17,7 @@ const Login = () => {
 	const [error, setError] = useState(null);
 	const emailRef = useRef();
 
-	useTitle("Cuddle Corner | Login")
+	useTitle("Cuddle Corner | Login");
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -60,35 +61,29 @@ const Login = () => {
 			});
 	};
 
-	const handleRecoverPass = event => {
+	const handleRecoverPass = (event) => {
 		const email = emailRef.current.value;
 		// console.log(email);
-		if(!email){
-			Swal.fire(
-				'Oops!',
-				'Please provide a email address!',
-				'warning'
-			  )
+		if (!email) {
+			Swal.fire("Oops!", "Please provide a email address!", "warning");
 		}
 		recoverPass(email)
-		.then( () => {
-			Swal.fire(
-				'Success',
-				'We sent a recovery password link to your email. Please check it.',
-				'success'
-			  )
-		})
-		.catch(error => console.log(error))
-	}
+			.then(() => {
+				Swal.fire(
+					"Success",
+					"We sent a recovery password link to your email. Please check it.",
+					"success"
+				);
+			})
+			.catch((error) => console.log(error));
+	};
 
 	return (
 		<div className="px-5 md:px-28 py-10 flex flex-col md:flex-row bg-pink-50">
 			<div className="w-full rounded-lg h-auto">
-				<img
-					src={login}
-					alt="login"
-					className="w-full h-full"
-				/>
+				<LazyLoad className="">
+					<img src={login} alt="login" className="w-full h-full" />
+				</LazyLoad>
 			</div>
 
 			<div className="bg-white p-5 md:p-10 w-full">
@@ -105,11 +100,13 @@ const Login = () => {
 				<h2 className="my-4 text-center md:text-3xl text-2xl font-bold text-gray-900">
 					Login to your account
 				</h2>
-               <div className={`text-center p-3 bg-red-50 text-red-500 my-3 rounded-md ${error ? "block" : "hidden"}`}>
-                    {
-                        error ? <p>{error}</p> : <></>
-                    }
-               </div>
+				<div
+					className={`text-center p-3 bg-red-50 text-red-500 my-3 rounded-md ${
+						error ? "block" : "hidden"
+					}`}
+				>
+					{error ? <p>{error}</p> : <></>}
+				</div>
 				<form onSubmit={handleLoginWithEmailPass}>
 					<div>
 						<label
@@ -121,7 +118,7 @@ const Login = () => {
 						<div className="flex items-center text-lg mb-5">
 							<FaUser className="absolute ml-3 w-6" />
 							<input
-								type="email" 
+								type="email"
 								ref={emailRef}
 								id="email"
 								name="email"
@@ -140,7 +137,10 @@ const Login = () => {
 							>
 								Password
 							</label>
-							<button onClick={handleRecoverPass} className="font-semibold text-indigo-400 hover:text-indigo-600">
+							<button
+								onClick={handleRecoverPass}
+								className="font-semibold text-indigo-400 hover:text-indigo-600"
+							>
 								Forgot password?
 							</button>
 						</div>

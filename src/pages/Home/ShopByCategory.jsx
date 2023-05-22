@@ -4,12 +4,14 @@ import "@smastrom/react-rating/style.css";
 import { Rating } from "@smastrom/react-rating";
 import { Link } from "react-router-dom";
 import SpinnerGlobal from "../shared/SpinnerGlobal";
+import LazyLoad from "react-lazy-load";
 
 function classNames(...classes) {
 	return classes.filter(Boolean).join(" ");
 }
 
 const ShopByCategory = () => {
+
 	const allCategory = [
 		{ value: "wild", label: "Wild Animals" },
 		{ value: "dinos", label: "Dinosaurs" },
@@ -64,13 +66,15 @@ const ShopByCategory = () => {
 									key={selectCategory._id}
 									className="shadow-xl rounded-xl duration-500 hover:shadow-black/50 md:hover:scale-105 hover:shadow-xl"
 								>
+									<LazyLoad className="md:h-[250px] h-[380px]">
 									<img
 										className="w-full mx-auto px-10 pt-10"
 										src={selectCategory?.image}
 										alt=""
 									/>
+									</LazyLoad>
 
-									<div className="relative px-6 pb-6 mt-6">
+									<div className="px-6 pb-6 mt-6">
 										<div className="flex justify-between">
 											<h1 className="font-semibold">
 												{selectCategory?.toyName}

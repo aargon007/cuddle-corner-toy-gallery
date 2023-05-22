@@ -2,6 +2,7 @@ import React from "react";
 import { Rating } from "@smastrom/react-rating";
 import { Link, useLoaderData } from "react-router-dom";
 import "@smastrom/react-rating/style.css";
+import LazyLoad from "react-lazy-load";
 
 const ViewToyDetails = () => {
 	const loadedToys = useLoaderData();
@@ -22,7 +23,9 @@ const ViewToyDetails = () => {
 		<div className="py-10 px-5 md:px-28">
 			<div className="flex items-center flex-col md:flex-row">
 				<div className="w-full h-full px-10">
-					<img src={image} alt="" className="w-full h-[400px]" />
+					<LazyLoad className="w-full h-[400px]">
+						<img src={image} alt="" className="w-full h-[400px]" />
+					</LazyLoad>
 				</div>
 				<div className="w-full space-y-5">
 					<h1 className="text-3xl font-semibold">{toyName}</h1>
@@ -31,7 +34,7 @@ const ViewToyDetails = () => {
 					</p>
 					<p>
 						<span className="font-semibold ">Available Quantity : </span>
-						{quantity ? quantity : 'stock out'}
+						{quantity ? quantity : "stock out"}
 					</p>
 					<div className="flex ">
 						<Rating
