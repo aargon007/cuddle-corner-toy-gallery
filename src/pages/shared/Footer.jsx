@@ -49,8 +49,8 @@ const Footer = () => {
                                 Home
                             </Link>
 
-							<Link to="about" className="defaultLink">
-                                About
+							<Link to="blog" className="defaultLink">
+                                Blog
                             </Link>
 
 							<Link to="login" className="defaultLink">

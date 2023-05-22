@@ -15,7 +15,7 @@ const Main = () => {
             once: true,
             offset: 200,
             delay: 50,
-            duration: 500,
+            duration: 1000,
             easing: 'ease',
         });
     // AOS.refresh();
