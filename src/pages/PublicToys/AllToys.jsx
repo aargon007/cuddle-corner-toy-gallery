@@ -16,7 +16,7 @@ const AllToys = () => {
 
 	const handleSearch = () => {
 		fetch(
-			`https://cuddle-corner-server-production.up.railway.app/all-toys/${searchKey}`
+			`https://api.workhub.tech/cuddle-corner/all-toys/${searchKey}`
 		)
 			.then((res) => res.json())
 			.then((data) => {

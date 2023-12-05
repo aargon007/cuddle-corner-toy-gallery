@@ -26,7 +26,7 @@ const MySingleToy = ({ toy, setControl, control }) => {
 		data.price = parseFloat(data.price);
 		// console.log(data);
 		fetch(
-			`https://cuddle-corner-server-production.up.railway.app/updateToy/${toy._id}`,
+			`https://api.workhub.tech/cuddle-corner/updateToy/${toy._id}`,
 			{
 				method: "PUT",
 				headers: {
@@ -58,7 +58,7 @@ const MySingleToy = ({ toy, setControl, control }) => {
 		}).then((result) => {
 			if (result.isConfirmed) {
 				fetch(
-					`https://cuddle-corner-server-production.up.railway.app/deleteToy/${id}`,
+					`https://api.workhub.tech/cuddle-corner/deleteToy/${id}`,
 					{
 						method: "DELETE",
 					}

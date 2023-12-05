@@ -16,7 +16,7 @@ const MyToy = () => {
 
 	useEffect(() => {
         const loadData = async() => {
-            const res = await fetch(`https://cuddle-corner-server-production.up.railway.app/my-toys?sellerEmail=${user?.email}&isAscending=${isAscending}`);
+            const res = await fetch(`https://api.workhub.tech/cuddle-corner/my-toys?sellerEmail=${user?.email}&isAscending=${isAscending}`);
             const data = await res.json();
             setMyToys(data)
         }

@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path : '/all-toys',
                 element : <AllToys/>,
-                loader : () => fetch('https://cuddle-corner-server-production.up.railway.app/all-toys')
+                loader : () => fetch('https://api.workhub.tech/cuddle-corner/all-toys')
             },
             {
                 path : '/my-toys',
@@ -50,7 +50,7 @@ const router = createBrowserRouter([
             {
                 path : '/toy/:id',
                 element : <PrivateRoute><ViewToyDetails/></PrivateRoute>,
-                loader : ({params}) => fetch(`https://cuddle-corner-server-production.up.railway.app/toy/${params.id}`)
+                loader : ({params}) => fetch(`https://api.workhub.tech/cuddle-corner/toy/${params.id}`)
             }
         ]
     }

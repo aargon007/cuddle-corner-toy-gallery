@@ -32,7 +32,7 @@ const AddToy = () => {
 		data.sub_category = selectedOption;
 
 		if (data) {
-			fetch("https://cuddle-corner-server-production.up.railway.app/add-toy", {
+			fetch("https://api.workhub.tech/cuddle-corner/add-toy", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

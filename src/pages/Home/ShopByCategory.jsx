@@ -28,7 +28,7 @@ const ShopByCategory = () => {
 	useEffect(() => {
 		const loadData = async () => {
 			const res = await fetch(
-				`https://cuddle-corner-server-production.up.railway.app/category?value=${selectCategories.value}&label=${selectCategories.label}`
+				`https://api.workhub.tech/cuddle-corner/category?value=${selectCategories.value}&label=${selectCategories.label}`
 			);
 			const data = await res.json();
 			setLoadedCategory(data);
