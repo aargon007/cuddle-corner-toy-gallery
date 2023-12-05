@@ -13,11 +13,9 @@ const AllToys = () => {
 
 	const [toys, setToys] = useState(loadedToys);
 	const [searchKey, setSearchKey] = useState("");
-
+	console.log(searchKey);
 	const handleSearch = () => {
-		fetch(
-			`https://api.workhub.tech/cuddle-corner/all-toys/${searchKey}`
-		)
+		fetch(`https://api.workhub.tech/cuddle-corner/all-toys/${searchKey}`)
 			.then((res) => res.json())
 			.then((data) => {
 				// console.log(data.length);
@@ -43,6 +41,13 @@ const AllToys = () => {
 					<input
 						type="search"
 						onChange={(e) => setSearchKey(e.target.value)}
+						onKeyDown={(e) => {
+							if (e.key === "Enter") {
+								// Prevent the form from submitting
+								e.preventDefault();
+								handleSearch();
+							}
+						}}
 						className="w-full px-4 py-1 text-gray-800 rounded-full focus:outline-none"
 						placeholder="search"
 						x-model="search"
